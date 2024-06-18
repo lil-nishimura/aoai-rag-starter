@@ -206,25 +206,25 @@ module openAi './modules/ai/cognitiveservices.bicep' = {
           capacity: 80
         }
       }
-      {
-        name: 'gpt-4-deploy'
-        model: {
-          format: 'OpenAI'
-          name: 'gpt-4'
-          version: '0613'
-        }
+     // {
+       // name: 'gpt-4-deploy'
+       // model: {
+         // format: 'OpenAI'
+         // name: 'gpt-4'
+         // version: '0613'
+       // }
         sku: {
           name: 'Standard'
           capacity: 10
         }
       }
-      {
-        name: 'gpt-4-32k-deploy'
-        model: {
-          format: 'OpenAI'
-          name: 'gpt-4-32k'
-          version: '0613'
-        }
+     // {
+       // name: 'gpt-4-32k-deploy'
+       // model: {
+         // format: 'OpenAI'
+         // name: 'gpt-4-32k'
+         // version: '0613'
+       // }
         sku: {
           name: 'Standard'
           capacity: 20
@@ -347,7 +347,7 @@ output COSMOSDB_DATABASE string = cosmosDb.outputs.databaseName
 output COSMOSDB_CONTAINER string = cosmosDb.outputs.containerName
 output COSMOSDB_ACCOUNT string = cosmosDb.outputs.accountName
 output COSMOSDB_RESOURCE_GROUP string = rg.name
-output AOAI_MODEL string = !empty(openAiModelName) ? openAiModelName : 'gpt-4'
+output AOAI_MODEL string = !empty(openAiModelName) ? openAiModelName : 'gpt-3.5'
 output AOAI_GPT_35_TURBO_DEPLOYMENT string = openAiGpt35TurboDeploymentName
 //output AOAI_GPT_4_DEPLOYMENT string = openAiGpt4DeploymentName
 //output AOAI_GPT_4_32K_DEPLOYMENT string = openAiGpt432kDeploymentName
