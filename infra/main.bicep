@@ -86,8 +86,8 @@ module api './modules/app/func.bicep' = {
     openAiModelName: !empty(openAiModelName) ? openAiModelName : 'gpt-35-turbo'
     openAiApiVersion: openAiApiVersion
     openAiGpt35TurboDeploymentName: openAiGpt35TurboDeploymentName
-    openAiGpt4DeploymentName: openAiGpt4DeploymentName
-    openAiGpt432kDeploymentName: openAiGpt432kDeploymentName
+    //openAiGpt4DeploymentName: openAiGpt4DeploymentName
+    //openAiGpt432kDeploymentName: openAiGpt432kDeploymentName
     storageAccountName: storage.outputs.name
     cosmosDbAccountName: cosmosDb.outputs.name
     cosmosDbDatabaseName: cosmosDb.outputs.databaseName
@@ -349,8 +349,8 @@ output COSMOSDB_ACCOUNT string = cosmosDb.outputs.accountName
 output COSMOSDB_RESOURCE_GROUP string = rg.name
 output AOAI_MODEL string = !empty(openAiModelName) ? openAiModelName : 'gpt-4'
 output AOAI_GPT_35_TURBO_DEPLOYMENT string = openAiGpt35TurboDeploymentName
-output AOAI_GPT_4_DEPLOYMENT string = openAiGpt4DeploymentName
-output AOAI_GPT_4_32K_DEPLOYMENT string = openAiGpt432kDeploymentName
+//output AOAI_GPT_4_DEPLOYMENT string = openAiGpt4DeploymentName
+//output AOAI_GPT_4_32K_DEPLOYMENT string = openAiGpt432kDeploymentName
 output AOAI_TEXT_EMBEDDING_ADA_002_DEPLOYMENT string = openAiTextEmbeddingAda002DeploymentName
 output AOAI_API_VERSION string = openAiApiVersion
 output DOCUMENT_INTELLIGENCE_ENDPOINT string = documentIntelligence.outputs.endpoint
