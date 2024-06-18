@@ -213,11 +213,11 @@ module openAi './modules/ai/cognitiveservices.bicep' = {
          // name: 'gpt-4'
          // version: '0613'
        // }
-        sku: {
-          name: 'Standard'
-          capacity: 10
-        }
-      }
+       // sku: {
+         // name: 'Standard'
+         // capacity: 10
+       // }
+     // }
      // {
        // name: 'gpt-4-32k-deploy'
        // model: {
@@ -225,11 +225,11 @@ module openAi './modules/ai/cognitiveservices.bicep' = {
          // name: 'gpt-4-32k'
          // version: '0613'
        // }
-        sku: {
-          name: 'Standard'
-          capacity: 20
-        }
-      }
+       // sku: {
+         // name: 'Standard'
+         // capacity: 20
+       // }
+     // }
       {
         name: 'text-embedding-ada-002-deploy'
         model: {
