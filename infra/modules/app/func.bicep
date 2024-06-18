@@ -5,8 +5,8 @@ param openAiServiceName string
 param openAiModelName string
 param openAiApiVersion string
 param openAiGpt35TurboDeploymentName string
-param openAiGpt4DeploymentName string
-param openAiGpt432kDeploymentName string
+// param openAiGpt4DeploymentName string
+// param openAiGpt432kDeploymentName string
 param location string = resourceGroup().location
 param tags object = {}
 param appServicePlanId string
