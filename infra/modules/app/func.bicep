@@ -73,14 +73,14 @@ resource func 'Microsoft.Web/sites@2021-03-01' = {
           name: 'AOAI_GPT_35_TURBO_DEPLOYMENT'
           value: 'gpt-35-turbo-deploy'
         }
-        {
-          name: 'AOAI_GPT_4_DEPLOYMENT'
-          value: 'gpt-4-deploy'
-        }
-        {
-          name: 'AOAI_GPT_4_32K_DEPLOYMENT'
-          value: 'gpt-4-32k-deploy'
-        }
+       // {
+         // name: 'AOAI_GPT_4_DEPLOYMENT'
+         // value: 'gpt-4-deploy'
+       // }
+       // {
+         // name: 'AOAI_GPT_4_32K_DEPLOYMENT'
+         // value: 'gpt-4-32k-deploy'
+       // }
         {
           name: 'AOAI_TEXT_EMBEDDING_ADA_002_DEPLOYMENT'
           value: 'text-embedding-ada-002-deploy'
