@@ -9,8 +9,8 @@ $COSMOSDB_DATABASE = (azd env get-values | Select-String "^COSMOSDB_DATABASE.+")
 $COSMOSDB_CONTAINER = (azd env get-values | Select-String "^COSMOSDB_CONTAINER.+").Matches.Value.Split('=')[1].Trim('"')
 $AOAI_MODEL = (azd env get-values | Select-String "^AOAI_MODEL.+").Matches.Value.Split('=')[1].Trim('"')
 $AOAI_GPT_35_TURBO_DEPLOYMENT = (azd env get-values | Select-String "^AOAI_GPT_35_TURBO_DEPLOYMENT.+").Matches.Value.Split('=')[1].Trim('"')
-$AOAI_GPT_4_DEPLOYMENT = (azd env get-values | Select-String "^AOAI_GPT_4_DEPLOYMENT.+").Matches.Value.Split('=')[1].Trim('"')
-$AOAI_GPT_4_32K_DEPLOYMENT = (azd env get-values | Select-String "^AOAI_GPT_4_32K_DEPLOYMENT.+").Matches.Value.Split('=')[1].Trim('"')
+# $AOAI_GPT_4_DEPLOYMENT = (azd env get-values | Select-String "^AOAI_GPT_4_DEPLOYMENT.+").Matches.Value.Split('=')[1].Trim('"')
+# $AOAI_GPT_4_32K_DEPLOYMENT = (azd env get-values | Select-String "^AOAI_GPT_4_32K_DEPLOYMENT.+").Matches.Value.Split('=')[1].Trim('"')
 $AOAI_TEXT_EMBEDDING_ADA_002_DEPLOYMENT = (azd env get-values | Select-String "^AOAI_TEXT_EMBEDDING_ADA_002_DEPLOYMENT.+").Matches.Value.Split('=')[1].Trim('"')
 $AOAI_API_VERSION = (azd env get-values | Select-String "^AOAI_API_VERSION.+").Matches.Value.Split('=')[1].Trim('"')
 
@@ -23,8 +23,8 @@ $AOAI_API_VERSION = (azd env get-values | Select-String "^AOAI_API_VERSION.+").M
     -replace '\${COSMOSDB_CONTAINER}', $COSMOSDB_CONTAINER `
     -replace '\${AOAI_MODEL}', $AOAI_MODEL `
     -replace '\${AOAI_GPT_35_TURBO_DEPLOYMENT}', $AOAI_GPT_35_TURBO_DEPLOYMENT `
-    -replace '\${AOAI_GPT_4_DEPLOYMENT}', $AOAI_GPT_4_DEPLOYMENT `
-    -replace '\${AOAI_GPT_4_32K_DEPLOYMENT}', $AOAI_GPT_4_32K_DEPLOYMENT `
+   # -replace '\${AOAI_GPT_4_DEPLOYMENT}', $AOAI_GPT_4_DEPLOYMENT `
+   # -replace '\${AOAI_GPT_4_32K_DEPLOYMENT}', $AOAI_GPT_4_32K_DEPLOYMENT `
     -replace '\${AOAI_TEXT_EMBEDDING_ADA_002_DEPLOYMENT}', $AOAI_TEXT_EMBEDDING_ADA_002_DEPLOYMENT `
     -replace '\${AOAI_API_VERSION}', $AOAI_API_VERSION |
     Out-File -FilePath .\src\backend\local.settings.json
