@@ -11,8 +11,8 @@ COSMOSDB_DATABASE=$(azd env get-values 2>/dev/null | grep "^COSMOSDB_DATABASE" |
 COSMOSDB_CONTAINER=$(azd env get-values 2>/dev/null | grep "^COSMOSDB_CONTAINER" | cut -d'=' -f2 | tr -d '"')
 AOAI_MODEL=$(azd env get-values 2>/dev/null | grep "^AOAI_MODEL" | cut -d'=' -f2 | tr -d '"')
 AOAI_GPT_35_TURBO_DEPLOYMENT=$(azd env get-values 2>/dev/null | grep "^AOAI_GPT_35_TURBO_DEPLOYMENT" | cut -d'=' -f2 | tr -d '"')
-AOAI_GPT_4_DEPLOYMENT=$(azd env get-values 2>/dev/null | grep "^AOAI_GPT_4_DEPLOYMENT" | cut -d'=' -f2 | tr -d '"')
-AOAI_GPT_4_32K_DEPLOYMENT=$(azd env get-values 2>/dev/null | grep "^AOAI_GPT_4_32K_DEPLOYMENT" | cut -d'=' -f2 | tr -d '"')
+# AOAI_GPT_4_DEPLOYMENT=$(azd env get-values 2>/dev/null | grep "^AOAI_GPT_4_DEPLOYMENT" | cut -d'=' -f2 | tr -d '"')
+# AOAI_GPT_4_32K_DEPLOYMENT=$(azd env get-values 2>/dev/null | grep "^AOAI_GPT_4_32K_DEPLOYMENT" | cut -d'=' -f2 | tr -d '"')
 AOAI_TEXT_EMBEDDING_ADA_002_DEPLOYMENT=$(azd env get-values 2>/dev/null | grep "^AOAI_TEXT_EMBEDDING_ADA_002_DEPLOYMENT" | cut -d'=' -f2 | tr -d '"')
 AOAI_API_VERSION=$(azd env get-values 2>/dev/null | grep "^AOAI_API_VERSION" | cut -d'=' -f2 | tr -d '"')
 
