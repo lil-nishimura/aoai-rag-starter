@@ -11,8 +11,6 @@ COSMOSDB_DATABASE=$(azd env get-values 2>/dev/null | grep "^COSMOSDB_DATABASE" |
 COSMOSDB_CONTAINER=$(azd env get-values 2>/dev/null | grep "^COSMOSDB_CONTAINER" | cut -d'=' -f2 | tr -d '"')
 AOAI_MODEL=$(azd env get-values 2>/dev/null | grep "^AOAI_MODEL" | cut -d'=' -f2 | tr -d '"')
 AOAI_GPT_35_TURBO_DEPLOYMENT=$(azd env get-values 2>/dev/null | grep "^AOAI_GPT_35_TURBO_DEPLOYMENT" | cut -d'=' -f2 | tr -d '"')
-# AOAI_GPT_4_DEPLOYMENT=$(azd env get-values 2>/dev/null | grep "^AOAI_GPT_4_DEPLOYMENT" | cut -d'=' -f2 | tr -d '"')
-# AOAI_GPT_4_32K_DEPLOYMENT=$(azd env get-values 2>/dev/null | grep "^AOAI_GPT_4_32K_DEPLOYMENT" | cut -d'=' -f2 | tr -d '"')
 AOAI_TEXT_EMBEDDING_ADA_002_DEPLOYMENT=$(azd env get-values 2>/dev/null | grep "^AOAI_TEXT_EMBEDDING_ADA_002_DEPLOYMENT" | cut -d'=' -f2 | tr -d '"')
 AOAI_API_VERSION=$(azd env get-values 2>/dev/null | grep "^AOAI_API_VERSION" | cut -d'=' -f2 | tr -d '"')
 
@@ -25,8 +23,6 @@ sed "s|\${COSMOSDB_DATABASE}|$COSMOSDB_DATABASE|g" | \
 sed "s|\${COSMOSDB_CONTAINER}|$COSMOSDB_CONTAINER|g" | \
 sed "s|\${AOAI_MODEL}|$AOAI_MODEL|g" | \
 sed "s|\${AOAI_GPT_35_TURBO_DEPLOYMENT}|$AOAI_GPT_35_TURBO_DEPLOYMENT|g" | \
-# sed "s|\${AOAI_GPT_4_DEPLOYMENT}|$AOAI_GPT_4_DEPLOYMENT|g" | \
-# sed "s|\${AOAI_GPT_4_32K_DEPLOYMENT}|$AOAI_GPT_4_32K_DEPLOYMENT|g" | \
 sed "s|\${AOAI_TEXT_EMBEDDING_ADA_002_DEPLOYMENT}|$AOAI_TEXT_EMBEDDING_ADA_002_DEPLOYMENT|g" | \
 sed "s|\${AOAI_API_VERSION}|$AOAI_API_VERSION|g" \
 > ./src/backend/local.settings.json
