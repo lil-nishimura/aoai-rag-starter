@@ -5,7 +5,7 @@ param openAiServiceName string
 param openAiModelName string
 param openAiApiVersion string
 param openAiGpt35TurboDeploymentName string
-// param openAiGpt4DeploymentName string
+param openAiGpt4DeploymentName string
 // param openAiGpt432kDeploymentName string
 param location string = resourceGroup().location
 param tags object = {}
@@ -73,10 +73,10 @@ resource func 'Microsoft.Web/sites@2021-03-01' = {
           name: 'AOAI_GPT_35_TURBO_DEPLOYMENT'
           value: 'gpt-35-turbo-deploy'
         }
-       // {
-         // name: 'AOAI_GPT_4_DEPLOYMENT'
-         // value: 'gpt-4-deploy'
-       // }
+        {
+          name: 'AOAI_GPT_4_DEPLOYMENT'
+          value: 'gpt-4-deploy'
+        }
        // {
          // name: 'AOAI_GPT_4_32K_DEPLOYMENT'
          // value: 'gpt-4-32k-deploy'
