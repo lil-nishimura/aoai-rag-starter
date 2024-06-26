@@ -28,7 +28,7 @@ param openAiSkuName string = '' // Azure OpenAI ServiceのSKU名(特に指定が
 param openAiServiceLocation string= '' // Azure OpenAI Serviceのリージョン(特に指定がなければazd upコマンド実施の際に指定されたリージョンとなる)
 param openAiModelName string = '' // Azure OpenAI Serviceのモデル名(特に指定がなければgpt-35-turboとなる)
 param openAiGpt35TurboDeploymentName string = 'gpt-35-turbo-deploy' // Azure OpenAI Serviceのgpt-35-turboのデプロイメント名
-//param openAiGpt4DeploymentName string = 'gpt-4-deploy' // Azure OpenAI Serviceのgpt-4のデプロイメント名
+param openAiGpt4DeploymentName string = 'gpt-4-deploy' // Azure OpenAI Serviceのgpt-4のデプロイメント名
 //param openAiGpt432kDeploymentName string = 'gpt-4-32k-deploy' // Azure OpenAI Serviceのgpt-4-32kのデプロイメント名
 param openAiTextEmbeddingAda002DeploymentName string = 'text-embedding-ada-002-deploy' // Azure OpenAI Serviceのtext-embedding-ada-002のデプロイメント名
 param openAiApiVersion string = '2023-12-01-preview' // Azure OpenAI ServiceのAPIバージョン
@@ -86,7 +86,7 @@ module api './modules/app/func.bicep' = {
     openAiModelName: !empty(openAiModelName) ? openAiModelName : 'gpt-35-turbo'
     openAiApiVersion: openAiApiVersion
     openAiGpt35TurboDeploymentName: openAiGpt35TurboDeploymentName
-    //openAiGpt4DeploymentName: openAiGpt4DeploymentName
+    openAiGpt4DeploymentName: openAiGpt4DeploymentName
     //openAiGpt432kDeploymentName: openAiGpt432kDeploymentName
     storageAccountName: storage.outputs.name
     cosmosDbAccountName: cosmosDb.outputs.name
@@ -206,18 +206,18 @@ module openAi './modules/ai/cognitiveservices.bicep' = {
           capacity: 80
         }
       }
-     // {
-       // name: 'gpt-4-deploy'
-       // model: {
-         // format: 'OpenAI'
-         // name: 'gpt-4'
-         // version: '0613'
-       // }
-       // sku: {
-         // name: 'Standard'
-         // capacity: 10
-       // }
-     // }
+      {
+        name: 'gpt-4-deploy'
+        model: {
+          format: 'OpenAI'
+          name: 'gpt-4'
+          version: '0613'
+        }
+        sku: {
+          name: 'Standard'
+          capacity: 10
+        }
+      }
      // {
        // name: 'gpt-4-32k-deploy'
        // model: {
@@ -349,7 +349,7 @@ output COSMOSDB_ACCOUNT string = cosmosDb.outputs.accountName
 output COSMOSDB_RESOURCE_GROUP string = rg.name
 output AOAI_MODEL string = !empty(openAiModelName) ? openAiModelName : 'gpt-35-turbo'
 output AOAI_GPT_35_TURBO_DEPLOYMENT string = openAiGpt35TurboDeploymentName
-//output AOAI_GPT_4_DEPLOYMENT string = openAiGpt4DeploymentName
+output AOAI_GPT_4_DEPLOYMENT string = openAiGpt4DeploymentName
 //output AOAI_GPT_4_32K_DEPLOYMENT string = openAiGpt432kDeploymentName
 output AOAI_TEXT_EMBEDDING_ADA_002_DEPLOYMENT string = openAiTextEmbeddingAda002DeploymentName
 output AOAI_API_VERSION string = openAiApiVersion
