@@ -34,7 +34,7 @@ gpt_model = os.environ["AOAI_MODEL"]
 gpt_35_turbo_deploy = os.environ["AOAI_GPT_35_TURBO_DEPLOYMENT"]
 
 # 環境変数からgtp-4のデプロイ名を取得する。
-# gpt_4_deploy = os.environ["AOAI_GPT_4_DEPLOYMENT"]
+gpt_4_deploy = os.environ["AOAI_GPT_4_DEPLOYMENT"]
 
 # 環境変数からgpt-4-32kのデプロイ名を取得する。
 # gpt_4_32k_deploy = os.environ["AOAI_GPT_4_32K_DEPLOYMENT"]
@@ -92,11 +92,11 @@ gpt_models = {
         "max_tokens": 4096,
         "encoding": tiktoken.encoding_for_model("gpt-3.5-turbo")
     },
-   # "gpt-4": {
-   #    "deployment": gpt_4_deploy,
-   #     "max_tokens": 8192,
-   #     "encoding": tiktoken.encoding_for_model("gpt-4")
-   # },
+   "gpt-4": {
+       "deployment": gpt_4_deploy,
+        "max_tokens": 8192,
+        "encoding": tiktoken.encoding_for_model("gpt-4")
+    },
    # "gpt-4-32k": {
    #     "deployment": gpt_4_32k_deploy,
    #     "max_tokens": 32768,
